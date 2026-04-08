@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A3 Studio — Agence Scan-to-BIM & Architecture de l'existant | Paris</title>
+  <meta name="description" content="A3 Studio transforme vos bâtiments existants en maquettes BIM exploitables. Relevé laser, modélisation Revit LOD 200-400, IFC 4. Devis gratuit sous 48h.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a href="#main" class="skip-nav">Aller au contenu principal</a>
+
+<!-- ═══════════════════════════════════════════
+     NAVIGATION — identique sur toutes les pages
+     Pour modifier : chercher ce commentaire dans
+     tous les fichiers HTML
+     ═══════════════════════════════════════════ -->
+<header class="nav" role="banner">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">A3 <span>STUDIO</span></a>
+    <nav class="nav__links" aria-label="Navigation principale">
+      <a href="realisations.html" class="nav__link">Projets</a>
+      <a href="offres.html" class="nav__link">Expertise</a>
+      <a href="apropos.html" class="nav__link">À propos</a>
+      <a href="contact.html" class="nav__link">Contact</a>
+    </nav>
+    <a href="contact.html" class="btn-primary nav__cta desktop-only">Déposer un brief</a>
+    <button class="nav__hamburger" aria-expanded="false" aria-label="Ouvrir le menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-overlay"></div>
+<div class="mobile-menu" role="dialog" aria-label="Menu de navigation">
+  <a href="realisations.html" class="mobile-menu__link">Projets</a>
+  <a href="offres.html" class="mobile-menu__link">Expertise</a>
+  <a href="apropos.html" class="mobile-menu__link">À propos</a>
+  <a href="contact.html" class="mobile-menu__link">Contact</a>
+  <a href="contact.html" class="btn-primary mobile-menu__cta">Déposer un brief</a>
+</div>
+
+<main id="main" role="main">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__grid">
+        <div class="hero__content">
+          <span class="section-eyebrow">Architecture & Technologies Numériques</span>
+          <h1 class="hero__title">Concevoir.<br>Scanner.<br><em>Modéliser le réel.</em></h1>
+          <p class="hero__subtitle">A3 Studio transforme vos bâtiments existants en maquettes BIM exploitables — relevé laser, modélisation Revit, structuration de la donnée.</p>
+          <div class="hero__actions">
+            <a href="realisations.html" class="btn-primary">Voir nos projets</a>
+            <a href="offres.html" class="btn-secondary">Notre expertise</a>
+          </div>
+        </div>
+        <div class="hero__image">
+          <!-- [IMAGE HERO] : 1200x800px -->
+          <!-- Remplacer par :
+          <img src="images/hero.jpg" alt="Maquette BIM A3 Studio" loading="eager"> -->
+          <div class="img-placeholder img-placeholder--hero">[IMAGE HERO]</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats bar -->
+  <section class="stats" aria-label="Chiffres clés">
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stats__item">
+          <div class="stats__number">+50</div>
+          <div class="stats__label">Projets livrés</div>
+        </div>
+        <div class="stats__item">
+          <div class="stats__number">12</div>
+          <div class="stats__label">Ans d'expertise BIM & Architecture</div>
+        </div>
+        <div class="stats__item">
+          <div class="stats__number">LOD 400</div>
+          <div class="stats__label">Niveau de détail maîtrisé</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Présentation + onglets -->
+  <section class="presentation section-padding">
+    <div class="container">
+      <span class="section-eyebrow">Qui sommes-nous</span>
+      <div class="presentation__intro">
+        <!-- [Prénom Nom] : remplacer par nom réel -->
+        <p class="presentation__text">A3 Studio est une agence d'architecture augmentée, fondée par [Prénom Nom], architecte HMONP et expert BIM depuis 2012.</p>
+        <p class="presentation__sub">À la croisée de l'architecture, du relevé 3D et de la modélisation BIM, nous accompagnons les maîtres d'ouvrage, bureaux d'études et architectes sur des projets de rénovation, transformation et exploitation du patrimoine bâti.</p>
+      </div>
+
+      <div class="tabs">
+        <div class="tabs__nav" role="tablist" aria-label="Nos domaines d'expertise">
+          <button class="tabs__btn" role="tab" aria-selected="true" aria-controls="tab-archi" id="btn-archi" tabindex="0">Architecture</button>
+          <button class="tabs__btn" role="tab" aria-selected="false" aria-controls="tab-scan" id="btn-scan" tabindex="-1">Scan to BIM</button>
+          <button class="tabs__btn" role="tab" aria-selected="false" aria-controls="tab-conseil" id="btn-conseil" tabindex="-1">Conseil BIM</button>
+        </div>
+        <div class="tabs__panel active" role="tabpanel" id="tab-archi" aria-labelledby="btn-archi">
+          <p>Nous intervenons sur des projets de rénovation et de transformation de l'existant. De l'esquisse au dépôt de permis, nous produisons des documents précis, coordonnés et exploitables par toutes les parties prenantes.</p>
+        </div>
+        <div class="tabs__panel" role="tabpanel" id="tab-scan" aria-labelledby="btn-scan">
+          <p>Relevé laser terrestre, traitement du nuage de points, modélisation Revit conforme IFC 4. Nous livrons des maquettes LOD 200 à LOD 400 avec plans 2D vérifiés et note méthodologique. Délai : 5 à 15 jours selon surface.</p>
+        </div>
+        <div class="tabs__panel" role="tabpanel" id="tab-conseil" aria-labelledby="btn-conseil">
+          <p>Définition du BEP, contrôle qualité des maquettes, coordination IFC, accompagnement des équipes. Mission ponctuelle ou forfait mensuel — sans le coût d'un BIM Manager en CDI.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projets récents -->
+  <section class="projets section-padding">
+    <div class="container">
+      <div class="projets__header">
+        <div>
+          <span class="section-eyebrow">Portfolio</span>
+          <h2 class="section-title">Projets récents</h2>
+        </div>
+        <a href="realisations.html" class="btn-secondary">Voir tous les projets →</a>
+      </div>
+      <div class="projets__grid">
+
+        <a href="realisations.html" class="card">
+          <div class="projet-card__image">
+            <!-- [IMAGE PROJET 1] : réhabilitation 600x400px -->
+            <div class="img-placeholder img-placeholder--card">[IMAGE PROJET 1]</div>
+          </div>
+          <div class="projet-card__content">
+            <div class="projet-card__category">Architecture · Mission complète</div>
+            <h3 class="projet-card__title">Réhabilitation d'un bâtiment industriel</h3>
+          </div>
+        </a>
+
+        <a href="realisations.html" class="card">
+          <div class="projet-card__image">
+            <!-- [IMAGE PROJET 2] : usine 600x400px -->
+            <div class="img-placeholder img-placeholder--card">[IMAGE PROJET 2]</div>
+          </div>
+          <div class="projet-card__content">
+            <div class="projet-card__category">Scan laser & Modélisation BIM</div>
+            <h3 class="projet-card__title">Relevé 3D — Usine industrielle</h3>
+          </div>
+        </a>
+
+        <a href="realisations.html" class="card">
+          <div class="projet-card__image">
+            <!-- [IMAGE PROJET 3] : patrimoine 600x400px -->
+            <div class="img-placeholder img-placeholder--card">[IMAGE PROJET 3]</div>
+          </div>
+          <div class="projet-card__content">
+            <div class="projet-card__category">Scan to BIM</div>
+            <h3 class="projet-card__title">Modélisation — Patrimoine historique</h3>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Notre approche -->
+  <section class="approche section-padding">
+    <div class="container">
+      <span class="section-eyebrow">Méthode</span>
+      <h2 class="section-title">Notre approche</h2>
+      <div class="approche__grid">
+
+        <div class="approche-card" tabindex="0">
+          <div class="approche-card__icon">&#9678;</div>
+          <h3 class="approche-card__title">Vision spatiale</h3>
+          <p class="approche-card__text">Architectes avant tout, nous lisons un bâtiment avant de le scanner. Cette lecture métier garantit des maquettes cohérentes, pas seulement géométriquement exactes.</p>
+          <span class="approche-card__arrow">→</span>
+        </div>
+
+        <div class="approche-card" tabindex="0">
+          <div class="approche-card__icon">&#11041;</div>
+          <h3 class="approche-card__title">Maîtrise du Scan to BIM</h3>
+          <p class="approche-card__text">Du nuage de points brut à la maquette exploitable, nous maîtrisons chaque étape — acquisition, registration, modélisation, contrôle qualité.</p>
+          <span class="approche-card__arrow">→</span>
+        </div>
+
+        <div class="approche-card" tabindex="0">
+          <div class="approche-card__icon">&#9638;</div>
+          <h3 class="approche-card__title">Gestion des données</h3>
+          <p class="approche-card__text">Nous structurons les informations de vos bâtiments pour alimenter tout le cycle de vie — de la rénovation à la GMAO.</p>
+          <span class="approche-card__arrow">→</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band__inner">
+        <div>
+          <h2 class="cta-band__title">Discutons de votre projet.</h2>
+          <p class="cta-band__subtitle">Échangeons sur vos besoins en architecture, relevé 3D ou modélisation BIM. Réponse sous 48h.</p>
+          <div class="cta-band__contact">
+            <!-- contact@a3studio.fr : email à confirmer -->
+            <a href="mailto:contact@a3studio.fr">📧 contact@a3studio.fr</a>
+            <!-- [LINKEDIN URL] : remplacer # -->
+            <a href="#" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
+          </div>
+        </div>
+        <a href="contact.html" class="btn-blanc">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER — identique sur toutes les pages
+     Pour modifier : chercher ce commentaire dans
+     tous les fichiers HTML
+     ═══════════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__top">
+      <a href="index.html" class="footer__logo">A3 <span>STUDIO</span></a>
+      <nav class="footer__links" aria-label="Liens footer">
+        <a href="realisations.html" class="footer__link">Projets</a>
+        <a href="offres.html" class="footer__link">Expertise</a>
+        <a href="apropos.html" class="footer__link">À propos</a>
+        <a href="mentions.html" class="footer__link">Mentions légales</a>
+      </nav>
+      <div class="footer__contacts">
+        <!-- contact@a3studio.fr : email à confirmer -->
+        <a href="mailto:contact@a3studio.fr" class="footer__contact">📧 contact@a3studio.fr</a>
+        <!-- [LINKEDIN URL] : remplacer # -->
+        <a href="#" class="footer__contact" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      © 2024 A3 Studio — Tous droits réservés.<br>
+      Agence d'architecture augmentée — Paris, France.
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
