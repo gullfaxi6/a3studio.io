@@ -3,92 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>À propos — Fondateur & expertise · A3 Studio</title>
+  <title>À propos — Fondateur &amp; expertise · A3 Studio</title>
   <meta name="description" content="12 ans de BIM. Architecte HMONP, expert Scan-to-BIM et IFC. A3 Studio, Paris.">
+  <link rel="canonical" href="https://a3studio.fr/apropos.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-<a href="#main" class="skip-nav">Aller au contenu principal</a>
-
-<!-- ═══════════════════════════════════════════
-     NAVIGATION — identique sur toutes les pages
-     Pour modifier : chercher ce commentaire dans
-     tous les fichiers HTML
-     ═══════════════════════════════════════════ -->
-<header class="nav" role="banner">
-  <div class="nav__inner">
-    <a href="index.html" class="nav__logo">A3 <span>STUDIO</span></a>
-    <nav class="nav__links" aria-label="Navigation principale">
-      <a href="realisations.html" class="nav__link">Projets</a>
-      <a href="offres.html" class="nav__link">Expertise</a>
-      <a href="apropos.html" class="nav__link">À propos</a>
-      <a href="contact.html" class="nav__link">Contact</a>
-    </nav>
-    <a href="contact.html" class="btn-primary nav__cta desktop-only">Déposer un brief</a>
-    <button class="nav__hamburger" aria-expanded="false" aria-label="Ouvrir le menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-</header>
-
-<div class="mobile-overlay"></div>
-<div class="mobile-menu" role="dialog" aria-label="Menu de navigation">
-  <a href="realisations.html" class="mobile-menu__link">Projets</a>
-  <a href="offres.html" class="mobile-menu__link">Expertise</a>
-  <a href="apropos.html" class="mobile-menu__link">À propos</a>
-  <a href="contact.html" class="mobile-menu__link">Contact</a>
-  <a href="contact.html" class="btn-primary mobile-menu__cta">Déposer un brief</a>
-</div>
-
+<div id="nav-placeholder"></div>
 <main id="main" role="main">
 
-  <!-- En-tête -->
-  <section class="page-header">
+  <!-- HEADER NOIR -->
+  <section class="page-header" aria-labelledby="about-heading">
     <div class="container">
-      <div class="page-header__inner">
-        <h1 class="page-header__title">Une conviction depuis 2012 : la donnée bâtiment doit être fiable.</h1>
-        <p class="page-header__subtitle">A3 Studio n'est pas une agence généraliste. C'est une structure spécialisée, construite autour d'une expertise rare.</p>
-      </div>
+      <div class="eyebrow">À propos</div>
+      <h1 id="about-heading" class="t-display" style="font-size:clamp(36px,4vw,62px)">
+        Une conviction depuis 2012 :<br>la donnée bâtiment<br><em>doit être fiable.</em>
+      </h1>
+      <p class="t-body-lg" style="max-width:540px;margin-top:24px">
+        A3 Studio n'est pas une agence généraliste. C'est une structure
+        spécialisée, construite autour d'une expertise rare.
+      </p>
     </div>
   </section>
 
-  <!-- Bloc fondateur -->
-  <section class="fondateur section-padding">
+  <!-- FONDATEUR — FOND BLANC -->
+  <section class="section-pad" style="background:var(--blanc)" aria-labelledby="founder-heading">
     <div class="container">
-      <div class="fondateur__grid">
-        <div class="fondateur__image">
-          <!-- [PHOTO FONDATEUR] : portrait 600x600px -->
-          <div class="img-placeholder img-placeholder--portrait">[PHOTO FONDATEUR]</div>
+      <div class="founder-grid">
+        <div>
+          <div class="founder-img" aria-label="Portrait du fondateur">
+            <!-- [PHOTO FONDATEUR] : portrait 600x600px -->
+            <!-- <img src="images/fondateur.jpg" alt="[Prénom Nom] — Architecte HMONP, fondateur A3 Studio" loading="lazy" style="width:100%;height:100%;object-fit:cover"> -->
+            <span class="founder-img-placeholder">[Photo fondateur]</span>
+          </div>
         </div>
         <div>
-          <h2 class="fondateur__name">Sébastien BERTUCCI</h2>
-          <p class="fondateur__role">Architecte HMONP · Expert BIM depuis 2012</p>
-          <p class="fondateur__bio">Diplômé en 2010, je pratique l'architecture et le BIM depuis plus de 12 ans. Référent BIM Manager dès 2012, j'ai accompagné des projets complexes — rénovation, patrimoine, industrie — en portant une exigence constante sur la qualité de la donnée produite.</p>
-          <p class="fondateur__bio">J'ai fondé A3 Studio pour une raison simple : trop de projets échouent non pas par manque de talent, mais par manque de données fiables en amont. A3 Studio existe pour éliminer ce problème.</p>
-          <ul class="fondateur__credentials">
-            <li>Architecte DE HMONP, diplômé 2010</li>
-            <li>BIM Manager référent depuis 2012</li>
-            <li>Revit · AutoCAD · Recap · Navisworks</li>
-            <li>IFC 4 / 4.3 · ISO 19650</li>
+          <div class="eyebrow">Fondateur</div>
+          <!-- [Prénom Nom] : remplacer par nom réel -->
+          <h2 id="founder-heading" class="t-h1" style="margin-bottom:8px">[Prénom Nom]</h2>
+          <p style="font-size:13px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--gris-ll);margin-bottom:28px">
+            Architecte HMONP · Expert BIM depuis 2012
+          </p>
+          <p class="t-body" style="margin-bottom:16px">
+            Diplômé en 2010, je pratique l'architecture et le BIM depuis plus
+            de 12 ans. Référent BIM Manager dès 2012, j'ai accompagné des
+            projets complexes — rénovation, patrimoine, industrie — en portant
+            une exigence constante sur la qualité de la donnée produite.
+          </p>
+          <p class="t-body" style="margin-bottom:32px">
+            J'ai fondé A3 Studio pour une raison simple : trop de projets
+            échouent non pas par manque de talent, mais par manque de données
+            fiables en amont. A3 Studio existe pour éliminer ce problème.
+          </p>
+          <ul class="about-credentials" aria-label="Formation et certifications">
+            <li class="cred-item">Architecte DE HMONP, diplômé 2010</li>
+            <li class="cred-item">BIM Manager référent depuis 2012</li>
+            <li class="cred-item">Revit · AutoCAD · ReCap · Navisworks</li>
+            <li class="cred-item">IFC 4 / 4.3 · ISO 19650</li>
           </ul>
-          <div class="fondateur__stats">
-            <div>
-              <div class="fondateur__stat-number">+50</div>
-              <div class="fondateur__stat-label">Projets</div>
+          <!-- Stats -->
+          <div style="display:flex;gap:0;border-top:1px solid var(--bordure);padding-top:32px;margin-top:32px">
+            <div style="padding-right:36px;border-right:1px solid var(--bordure)">
+              <div style="font-family:var(--serif);font-size:44px;font-weight:300;color:var(--orange);line-height:1">+50</div>
+              <div style="font-size:10px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--gris-ll);margin-top:6px">Projets livrés</div>
             </div>
-            <div>
-              <div class="fondateur__stat-number">12</div>
-              <div class="fondateur__stat-label">Ans</div>
+            <div style="padding:0 36px;border-right:1px solid var(--bordure)">
+              <div style="font-family:var(--serif);font-size:44px;font-weight:300;color:var(--orange);line-height:1">12</div>
+              <div style="font-size:10px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--gris-ll);margin-top:6px">Ans d'expertise</div>
             </div>
-            <div>
-              <div class="fondateur__stat-number">LOD 200→400</div>
-              <div class="fondateur__stat-label">Maîtrise</div>
+            <div style="padding-left:36px">
+              <div style="font-family:var(--serif);font-size:44px;font-weight:300;color:var(--orange);line-height:1">LOD 200→400</div>
+              <div style="font-size:10px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--gris-ll);margin-top:6px">Niveaux maîtrisés</div>
             </div>
           </div>
         </div>
@@ -96,75 +84,64 @@
     </div>
   </section>
 
-  <!-- Valeurs -->
-  <section class="valeurs section-padding" style="padding-top: 0;">
+  <!-- VALEURS — FOND OFF-WHITE -->
+  <section class="section-pad" style="background:var(--off)" aria-labelledby="values-heading">
     <div class="container">
-      <span class="section-eyebrow">Nos valeurs</span>
-      <h2 class="section-title">Ce qui guide chaque mission</h2>
-      <div class="valeurs__grid">
-
-        <div class="valeur-card">
-          <h3 class="valeur-card__title">Précision avant tout</h3>
-          <p class="valeur-card__text">Nous ne livrons pas une maquette tant qu'elle n'a pas passé notre contrôle qualité interne. Tolérance géométrique, cohérence des données, conformité IFC — chaque point est vérifié.</p>
+      <div class="eyebrow">Nos engagements</div>
+      <h2 id="values-heading" class="t-h1" style="max-width:400px;margin-bottom:0">
+        Ce qui nous <em>différencie.</em>
+      </h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <h3 class="value-title">Précision avant tout</h3>
+          <p class="t-body-sm">
+            Nous ne livrons pas une maquette tant qu'elle n'a pas passé notre
+            contrôle qualité interne. Tolérance géométrique, cohérence des
+            données, conformité IFC — chaque point est vérifié.
+          </p>
         </div>
-
-        <div class="valeur-card">
-          <h3 class="valeur-card__title">Transparence totale</h3>
-          <p class="valeur-card__text">Délais, méthodes, limites de prestation — tout est écrit dans la note méthodologique livrée avec chaque mission. Pas de surprise en fin de projet.</p>
+        <div class="value-card">
+          <h3 class="value-title">Transparence totale</h3>
+          <p class="t-body-sm">
+            Délais, méthodes, limites de prestation — tout est écrit dans la
+            note méthodologique livrée avec chaque mission. Pas de surprise
+            en fin de projet.
+          </p>
         </div>
-
-        <div class="valeur-card">
-          <h3 class="valeur-card__title">Livrables immédiatement exploitables</h3>
-          <p class="valeur-card__text">Notre objectif n'est pas de produire une belle maquette. C'est de produire une maquette que vous pouvez utiliser le jour même de la livraison.</p>
+        <div class="value-card">
+          <h3 class="value-title">Livrables immédiatement exploitables</h3>
+          <p class="t-body-sm">
+            Notre objectif n'est pas de produire une belle maquette. C'est de
+            produire une maquette que vous pouvez utiliser le jour même de la
+            livraison.
+          </p>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- CTA Band -->
-  <section class="cta-band">
+  <!-- CTA — FOND ORANGE -->
+  <section class="cta-section" aria-labelledby="cta-about-heading">
+    <svg class="cta-deco" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="40" y="30" width="280" height="200" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="70" y="55" width="100" height="80" fill="none" stroke="white" stroke-width="0.8"/>
+      <rect x="185" y="55" width="110" height="80" fill="none" stroke="white" stroke-width="0.8"/>
+    </svg>
     <div class="container">
-      <div class="cta-band__inner">
+      <div class="cta-grid">
         <div>
-          <h2 class="cta-band__title">Vous avez un projet ? Parlons-en directement.</h2>
+          <h2 id="cta-about-heading" class="cta-h2">Vous avez un projet ? Parlons-en directement.</h2>
         </div>
-        <a href="contact.html" class="btn-blanc">Déposer un brief →</a>
+        <div class="cta-btns">
+          <a href="contact.html" class="btn-w">Déposer un brief →</a>
+        </div>
       </div>
     </div>
   </section>
 
 </main>
-
-<!-- ═══════════════════════════════════════════
-     FOOTER — identique sur toutes les pages
-     Pour modifier : chercher ce commentaire dans
-     tous les fichiers HTML
-     ═══════════════════════════════════════════ -->
-<footer class="footer" role="contentinfo">
-  <div class="container">
-    <div class="footer__top">
-      <a href="index.html" class="footer__logo">A3 <span>STUDIO</span></a>
-      <nav class="footer__links" aria-label="Liens footer">
-        <a href="realisations.html" class="footer__link">Projets</a>
-        <a href="offres.html" class="footer__link">Expertise</a>
-        <a href="apropos.html" class="footer__link">À propos</a>
-        <a href="mentions.html" class="footer__link">Mentions légales</a>
-      </nav>
-      <div class="footer__contacts">
-        <!-- contact@a3studio.fr : email à confirmer -->
-        <a href="mailto:contact@a3studio.fr" class="footer__contact">📧 contact@a3studio.fr</a>
-        <!-- [LINKEDIN URL] : remplacer # -->
-        <a href="https://www.linkedin.com/in/s%C3%A9bastien-bertucci-77523326/" class="footer__contact" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      © 2024 A3 Studio — Tous droits réservés.<br>
-      Agence d'architecture augmentée — Paris, France.
-    </div>
-  </div>
-</footer>
-
+<div id="footer-placeholder"></div>
+<script src="js/partials.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

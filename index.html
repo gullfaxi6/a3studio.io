@@ -3,250 +3,523 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A3 Studio — Agence Scan-to-BIM & Architecture de l'existant | Paris</title>
+  <title>A3 Studio — Agence Scan-to-BIM &amp; Architecture de l'existant | Paris</title>
   <meta name="description" content="A3 Studio transforme vos bâtiments existants en maquettes BIM exploitables. Relevé laser, modélisation Revit LOD 200-400, IFC 4. Devis gratuit sous 48h.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://a3studio.fr/">
+  <!-- Open Graph -->
+  <meta property="og:title"       content="A3 Studio — Agence Scan-to-BIM &amp; Architecture de l'existant">
+  <meta property="og:description" content="Relevé laser, modélisation Revit LOD 200-400, IFC 4. Paris.">
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://a3studio.fr/">
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<a href="#main" class="skip-nav">Aller au contenu principal</a>
-
-<!-- ═══════════════════════════════════════════
-     NAVIGATION — identique sur toutes les pages
-     Pour modifier : chercher ce commentaire dans
-     tous les fichiers HTML
-     ═══════════════════════════════════════════ -->
-<header class="nav" role="banner">
-  <div class="nav__inner">
-    <a href="index.html" class="nav__logo">A3 <span>STUDIO</span></a>
-    <nav class="nav__links" aria-label="Navigation principale">
-      <a href="realisations.html" class="nav__link">Projets</a>
-      <a href="offres.html" class="nav__link">Expertise</a>
-      <a href="apropos.html" class="nav__link">À propos</a>
-      <a href="contact.html" class="nav__link">Contact</a>
-    </nav>
-    <a href="contact.html" class="btn-primary nav__cta desktop-only">Déposer un brief</a>
-    <button class="nav__hamburger" aria-expanded="false" aria-label="Ouvrir le menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-</header>
-
-<div class="mobile-overlay"></div>
-<div class="mobile-menu" role="dialog" aria-label="Menu de navigation">
-  <a href="realisations.html" class="mobile-menu__link">Projets</a>
-  <a href="offres.html" class="mobile-menu__link">Expertise</a>
-  <a href="apropos.html" class="mobile-menu__link">À propos</a>
-  <a href="contact.html" class="mobile-menu__link">Contact</a>
-  <a href="contact.html" class="btn-primary mobile-menu__cta">Déposer un brief</a>
-</div>
+<!-- NAV + TICKER injectés par partials.js -->
+<div id="nav-placeholder"></div>
 
 <main id="main" role="main">
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero__grid">
-        <div class="hero__content">
-          <span class="section-eyebrow">Architecture & Technologies Numériques</span>
-          <h1 class="hero__title">Concevoir.<br>Scanner.<br><em>Modéliser le réel.</em></h1>
-          <p class="hero__subtitle">A3 Studio transforme vos bâtiments existants en maquettes BIM exploitables — relevé laser, modélisation Revit, structuration de la donnée.</p>
-          <div class="hero__actions">
-            <a href="realisations.html" class="btn-primary">Voir nos projets</a>
-            <a href="offres.html" class="btn-secondary">Notre expertise</a>
-          </div>
+  <!-- ══════════════════════════════
+       HERO — FOND NOIR
+  ══════════════════════════════ -->
+  <section class="hero" aria-label="Présentation A3 Studio">
+    <div class="hero-left">
+      <div class="eyebrow" aria-hidden="true">Architecture &amp; Technologies Numériques</div>
+      <h1 class="t-display">
+        Concevoir.<br>
+        Scanner.<br>
+        <em>Modéliser le réel.</em>
+      </h1>
+      <p class="hero-sub" style="margin-top:28px">
+        A3 Studio transforme vos bâtiments existants en
+        <strong>maquettes BIM exploitables</strong> —
+        relevé laser, modélisation Revit, structuration de la donnée.
+      </p>
+      <div class="hero-btns">
+        <a href="realisations.html" class="btn-p">Voir nos projets →</a>
+        <a href="offres.html"       class="btn-s">Notre expertise</a>
+      </div>
+      <div class="hero-stats" role="list" aria-label="Chiffres clés">
+        <div class="hero-stat" role="listitem">
+          <div class="hero-stat-num">+50</div>
+          <div class="hero-stat-label">Projets livrés</div>
         </div>
-        <div class="hero__image">
-          <img src="images/hero.jpg" alt="Maquette BIM A3 Studio" loading="eager" style="width:100%;height:100%;object-fit:cover;">
+        <div class="hero-stat" role="listitem">
+          <div class="hero-stat-num">12</div>
+          <div class="hero-stat-label">Ans d'expertise</div>
+        </div>
+        <div class="hero-stat" role="listitem">
+          <div class="hero-stat-num accent">LOD 400</div>
+          <div class="hero-stat-label">Précision maîtrisée</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Visualisation technique -->
+    <div class="hero-right" aria-hidden="true">
+      <div class="hero-viz">
+        <!-- Scan beam animé -->
+        <div class="scan-beam"></div>
+
+        <!-- Plan SVG -->
+        <svg class="plan" viewBox="0 0 560 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="50" y="70" width="210" height="150" fill="none" stroke="white" stroke-width="0.8"/>
+          <rect x="70" y="90" width="75" height="55" fill="rgba(224,92,26,0.15)" stroke="rgba(224,92,26,0.5)" stroke-width="0.5"/>
+          <rect x="155" y="90" width="85" height="55" fill="none" stroke="white" stroke-width="0.4"/>
+          <rect x="70" y="155" width="170" height="50" fill="none" stroke="white" stroke-width="0.4"/>
+          <rect x="290" y="90" width="155" height="210" fill="none" stroke="white" stroke-width="0.8"/>
+          <rect x="310" y="110" width="55" height="75" fill="none" stroke="white" stroke-width="0.4"/>
+          <rect x="375" y="110" width="50" height="75" fill="rgba(224,92,26,0.06)" stroke="rgba(224,92,26,0.2)" stroke-width="0.5"/>
+          <rect x="310" y="200" width="115" height="85" fill="none" stroke="white" stroke-width="0.4"/>
+          <rect x="50" y="255" width="210" height="140" fill="none" stroke="white" stroke-width="0.8"/>
+          <rect x="70" y="275" width="80" height="95" fill="none" stroke="white" stroke-width="0.4"/>
+          <rect x="162" y="275" width="80" height="95" fill="rgba(224,92,26,0.04)" stroke="rgba(224,92,26,0.15)" stroke-width="0.5"/>
+          <line x1="50" y1="190" x2="260" y2="190" stroke="white" stroke-width="0.3" stroke-dasharray="4,4"/>
+          <line x1="165" y1="70" x2="165" y2="220" stroke="white" stroke-width="0.3" stroke-dasharray="4,4"/>
+          <line x1="290" y1="195" x2="445" y2="195" stroke="white" stroke-width="0.3" stroke-dasharray="4,4"/>
+          <circle cx="107" cy="117" r="3.5" fill="#e05c1a" opacity="0.9"/>
+          <circle cx="400" cy="147" r="3.5" fill="#e05c1a" opacity="0.7"/>
+          <circle cx="202" cy="322" r="3.5" fill="#f59e0b" opacity="0.7"/>
+        </svg>
+
+        <!-- Nuage de points -->
+        <svg class="pts" viewBox="0 0 560 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <g fill="#e05c1a">
+            <circle cx="70" cy="140" r="1.2"/><circle cx="84" cy="137" r="0.8"/><circle cx="98" cy="142" r="1.2"/>
+            <circle cx="112" cy="138" r="0.8"/><circle cx="126" cy="141" r="1.2"/><circle cx="140" cy="137" r="0.8"/>
+            <circle cx="154" cy="143" r="1.2"/><circle cx="168" cy="139" r="0.8"/><circle cx="182" cy="141" r="1.2"/>
+            <circle cx="196" cy="138" r="0.8"/><circle cx="210" cy="142" r="1.2"/><circle cx="224" cy="139" r="0.8"/>
+            <circle cx="70" cy="218" r="0.8"/><circle cx="86" cy="215" r="1.2"/><circle cx="102" cy="220" r="0.8"/>
+            <circle cx="118" cy="216" r="1.2"/><circle cx="134" cy="219" r="0.8"/><circle cx="150" cy="215" r="1.2"/>
+            <circle cx="166" cy="221" r="0.8"/><circle cx="182" cy="217" r="1.2"/><circle cx="198" cy="219" r="0.8"/>
+          </g>
+          <g fill="rgba(245,158,11,0.7)">
+            <circle cx="310" cy="155" r="1"/><circle cx="326" cy="152" r="1.2"/><circle cx="342" cy="157" r="0.8"/>
+            <circle cx="358" cy="153" r="1.2"/><circle cx="374" cy="156" r="0.8"/><circle cx="390" cy="152" r="1"/>
+            <circle cx="406" cy="158" r="1.2"/><circle cx="422" cy="154" r="0.8"/><circle cx="438" cy="156" r="1"/>
+            <circle cx="310" cy="228" r="1.2"/><circle cx="328" cy="225" r="0.8"/><circle cx="346" cy="230" r="1.2"/>
+            <circle cx="364" cy="226" r="0.8"/><circle cx="382" cy="228" r="1.2"/><circle cx="400" cy="225" r="0.8"/>
+          </g>
+          <g fill="rgba(255,255,255,0.18)">
+            <circle cx="58" cy="305" r="0.8"/><circle cx="74" cy="302" r="1"/><circle cx="90" cy="307" r="0.8"/>
+            <circle cx="106" cy="303" r="1"/><circle cx="122" cy="306" r="0.8"/><circle cx="138" cy="302" r="1"/>
+            <circle cx="154" cy="307" r="0.8"/><circle cx="170" cy="304" r="1"/><circle cx="186" cy="306" r="0.8"/>
+            <circle cx="202" cy="302" r="1"/><circle cx="218" cy="307" r="0.8"/><circle cx="234" cy="304" r="1"/>
+          </g>
+        </svg>
+
+        <!-- Badges -->
+        <div class="hero-badge top-left">
+          <div class="badge-dot"></div>
+          <span class="badge-label" style="color:var(--orange)">Acquisition active</span>
+        </div>
+        <div class="crosshair" aria-hidden="true"><div class="crosshair-dot"></div></div>
+        <div class="hero-badge bottom-left">
+          <div class="badge-meta">Précision relevé</div>
+          <div class="badge-val">±<span>2</span> mm</div>
+        </div>
+        <div class="hero-badge bottom-right">
+          <div class="badge-meta">Niveau de détail</div>
+          <div class="badge-main">LOD 400</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Stats bar -->
-  <section class="stats" aria-label="Chiffres clés">
-    <div class="container">
-      <div class="stats__grid">
-        <div class="stats__item">
-          <div class="stats__number">+50</div>
-          <div class="stats__label">Projets livrés</div>
-        </div>
-        <div class="stats__item">
-          <div class="stats__number">12</div>
-          <div class="stats__label">Ans d'expertise BIM & Architecture</div>
-        </div>
-        <div class="stats__item">
-          <div class="stats__number">LOD 400</div>
-          <div class="stats__label">Niveau de détail maîtrisé</div>
-        </div>
-      </div>
+  <!-- ══════════════════════════════
+       CLIENTS BAR — FOND #000
+  ══════════════════════════════ -->
+  <div class="clients-bar" aria-label="Nos clients">
+    <span class="clients-label">Ils nous font confiance</span>
+    <div class="clients-sep" aria-hidden="true"></div>
+    <div class="clients-list" role="list">
+      <span class="client-item" role="listitem">Maîtres d'ouvrage</span>
+      <span class="client-item" role="listitem">Bureaux d'études</span>
+      <span class="client-item" role="listitem">Promoteurs</span>
+      <span class="client-item" role="listitem">Architectes MOE</span>
+      <span class="client-item" role="listitem">Facility Managers</span>
     </div>
-  </section>
+  </div>
 
-  <!-- Présentation + onglets -->
-  <section class="presentation section-padding">
+  <!-- ══════════════════════════════
+       À PROPOS — FOND BLANC
+  ══════════════════════════════ -->
+  <section class="about section-pad" aria-labelledby="about-heading">
     <div class="container">
-      <span class="section-eyebrow">Qui sommes-nous</span>
-      <div class="presentation__intro">
-        <p class="presentation__text">A3 Studio est une agence d'architecture augmentée, fondée par Sébastien BERTUCCI, architecte HMONP et expert BIM depuis 2012.</p>
-        <p class="presentation__sub">À la croisée de l'architecture, du relevé 3D et de la modélisation BIM, nous accompagnons les maîtres d'ouvrage, bureaux d'études et architectes sur des projets de rénovation, transformation et exploitation du patrimoine bâti.</p>
-      </div>
-
-      <div class="tabs">
-        <div class="tabs__nav" role="tablist" aria-label="Nos domaines d'expertise">
-          <button class="tabs__btn" role="tab" aria-selected="true" aria-controls="tab-archi" id="btn-archi" tabindex="0">Architecture</button>
-          <button class="tabs__btn" role="tab" aria-selected="false" aria-controls="tab-scan" id="btn-scan" tabindex="-1">Scan to BIM</button>
-          <button class="tabs__btn" role="tab" aria-selected="false" aria-controls="tab-conseil" id="btn-conseil" tabindex="-1">Conseil BIM</button>
-        </div>
-        <div class="tabs__panel active" role="tabpanel" id="tab-archi" aria-labelledby="btn-archi">
-          <p>Nous intervenons sur des projets de rénovation et de transformation de l'existant. De l'esquisse au dépôt de permis, nous produisons des documents précis, coordonnés et exploitables par toutes les parties prenantes.</p>
-        </div>
-        <div class="tabs__panel" role="tabpanel" id="tab-scan" aria-labelledby="btn-scan">
-          <p>Relevé laser terrestre, traitement du nuage de points, modélisation Revit conforme IFC 4. Nous livrons des maquettes LOD 200 à LOD 400 avec plans 2D vérifiés et note méthodologique. Délai : 5 à 15 jours selon surface.</p>
-        </div>
-        <div class="tabs__panel" role="tabpanel" id="tab-conseil" aria-labelledby="btn-conseil">
-          <p>Définition du BEP, contrôle qualité des maquettes, coordination IFC, accompagnement des équipes. Mission ponctuelle ou forfait mensuel — sans le coût d'un BIM Manager en CDI.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projets récents -->
-  <section class="projets section-padding">
-    <div class="container">
-      <div class="projets__header">
+      <div class="about-grid">
         <div>
-          <span class="section-eyebrow">Portfolio</span>
-          <h2 class="section-title">Projets récents</h2>
+          <div class="eyebrow">Qui sommes-nous</div>
+          <h2 id="about-heading" class="t-h1">
+            Une agence d'architecture augmentée. Fondée par un architecte
+            HMONP, expert BIM depuis <em>2012.</em>
+          </h2>
+          <p class="t-body" style="margin-top:24px">
+            À la croisée de l'architecture, du relevé 3D et de la modélisation
+            BIM, nous accompagnons les maîtres d'ouvrage, bureaux d'études et
+            architectes sur des projets de rénovation, transformation et
+            exploitation du patrimoine bâti.
+          </p>
+          <ul class="about-credentials" aria-label="Credentials">
+            <li class="cred-item">Architecte DE HMONP, diplômé 2010</li>
+            <li class="cred-item">BIM Manager référent depuis 2012</li>
+            <li class="cred-item">Revit · ReCap · Navisworks · IFC 4 / 4.3</li>
+            <li class="cred-item">ISO 19650 · LOD 200 → 400</li>
+          </ul>
         </div>
-        <a href="realisations.html" class="btn-secondary">Voir tous les projets →</a>
-      </div>
-      <div class="projets__grid">
 
-        <a href="realisations.html" class="card">
-          <div class="projet-card__image">
-            <!-- [IMAGE PROJET 1] : réhabilitation 600x400px -->
-            <div class="img-placeholder img-placeholder--card">[IMAGE PROJET 1]</div>
+        <!-- Onglets -->
+        <div data-tabs aria-label="Nos domaines d'expertise">
+          <div class="tabs-nav" role="tablist" aria-label="Domaines d'expertise">
+            <button class="tab-btn active" role="tab" aria-selected="true"
+                    aria-controls="tab-archi" id="btn-archi">Architecture</button>
+            <button class="tab-btn" role="tab" aria-selected="false"
+                    aria-controls="tab-scan" id="btn-scan" tabindex="-1">Scan to BIM</button>
+            <button class="tab-btn" role="tab" aria-selected="false"
+                    aria-controls="tab-bim" id="btn-bim" tabindex="-1">Conseil BIM</button>
           </div>
-          <div class="projet-card__content">
-            <div class="projet-card__category">Architecture · Mission complète</div>
-            <h3 class="projet-card__title">Réhabilitation d'un bâtiment industriel</h3>
+          <div class="tab-panel active" id="tab-archi" role="tabpanel" aria-labelledby="btn-archi">
+            <p class="t-body">
+              Nous intervenons sur des projets de rénovation et de
+              transformation de l'existant. De l'esquisse au dépôt de permis,
+              nous produisons des documents précis, coordonnés et exploitables
+              par toutes les parties prenantes.
+            </p>
+            <div class="tab-chips">
+              <span class="chip">Rénovation</span>
+              <span class="chip">Transformation</span>
+              <span class="chip">Patrimoine</span>
+              <span class="chip">PC · DP</span>
+            </div>
           </div>
-        </a>
-
-        <a href="realisations.html" class="card">
-          <div class="projet-card__image">
-            <!-- [IMAGE PROJET 2] : usine 600x400px -->
-            <div class="img-placeholder img-placeholder--card">[IMAGE PROJET 2]</div>
+          <div class="tab-panel" id="tab-scan" role="tabpanel" aria-labelledby="btn-scan">
+            <p class="t-body">
+              Relevé laser terrestre, traitement du nuage de points,
+              modélisation Revit conforme IFC 4. Nous livrons des maquettes
+              LOD 200 à LOD 400 avec plans 2D vérifiés et note
+              méthodologique. Délai : 5 à 15 jours selon surface.
+            </p>
+            <div class="tab-chips">
+              <span class="chip">Revit · IFC 4</span>
+              <span class="chip">LOD 200→400</span>
+              <span class="chip">5–15 jours</span>
+              <span class="chip">Note méthodologique</span>
+            </div>
           </div>
-          <div class="projet-card__content">
-            <div class="projet-card__category">Scan laser & Modélisation BIM</div>
-            <h3 class="projet-card__title">Relevé 3D — Usine industrielle</h3>
+          <div class="tab-panel" id="tab-bim" role="tabpanel" aria-labelledby="btn-bim">
+            <p class="t-body">
+              Définition du BEP, contrôle qualité des maquettes, coordination
+              IFC, accompagnement des équipes. Mission ponctuelle ou forfait
+              mensuel — sans le coût d'un BIM Manager en CDI.
+            </p>
+            <div class="tab-chips">
+              <span class="chip">BEP</span>
+              <span class="chip">Contrôle IFC</span>
+              <span class="chip">Coordination</span>
+              <span class="chip">Forfait mensuel</span>
+            </div>
           </div>
-        </a>
-
-        <a href="realisations.html" class="card">
-          <div class="projet-card__image">
-            <!-- [IMAGE PROJET 3] : patrimoine 600x400px -->
-            <div class="img-placeholder img-placeholder--card">[IMAGE PROJET 3]</div>
-          </div>
-          <div class="projet-card__content">
-            <div class="projet-card__category">Scan to BIM</div>
-            <h3 class="projet-card__title">Modélisation — Patrimoine historique</h3>
-          </div>
-        </a>
-
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Notre approche -->
-  <section class="approche section-padding">
-    <div class="container">
-      <span class="section-eyebrow">Méthode</span>
-      <h2 class="section-title">Notre approche</h2>
-      <div class="approche__grid">
-
-        <div class="approche-card" tabindex="0">
-          <div class="approche-card__icon">&#9678;</div>
-          <h3 class="approche-card__title">Vision spatiale</h3>
-          <p class="approche-card__text">Architectes avant tout, nous lisons un bâtiment avant de le scanner. Cette lecture métier garantit des maquettes cohérentes, pas seulement géométriquement exactes.</p>
-          <span class="approche-card__arrow">→</span>
-        </div>
-
-        <div class="approche-card" tabindex="0">
-          <div class="approche-card__icon">&#11041;</div>
-          <h3 class="approche-card__title">Maîtrise du Scan to BIM</h3>
-          <p class="approche-card__text">Du nuage de points brut à la maquette exploitable, nous maîtrisons chaque étape — acquisition, registration, modélisation, contrôle qualité.</p>
-          <span class="approche-card__arrow">→</span>
-        </div>
-
-        <div class="approche-card" tabindex="0">
-          <div class="approche-card__icon">&#9638;</div>
-          <h3 class="approche-card__title">Gestion des données</h3>
-          <p class="approche-card__text">Nous structurons les informations de vos bâtiments pour alimenter tout le cycle de vie — de la rénovation à la GMAO.</p>
-          <span class="approche-card__arrow">→</span>
-        </div>
-
+  <!-- ══════════════════════════════
+       SERVICES — FOND NOIR
+  ══════════════════════════════ -->
+  <section class="services-section" aria-labelledby="services-heading">
+    <div class="services-header">
+      <div>
+        <div class="eyebrow">Nos prestations</div>
+        <h2 id="services-heading" class="t-h1 on-dark" style="max-width:480px">
+          Trois façons d'exploiter votre <em>patrimoine bâti.</em>
+        </h2>
       </div>
+      <a href="offres.html" class="btn-s">Toutes nos offres →</a>
+    </div>
+
+    <div class="services-grid" role="list">
+      <!-- SVC 1 -->
+      <article class="svc-card" role="listitem" aria-label="Offre Scan to BIM">
+        <div class="svc-num" aria-hidden="true">01 / 03</div>
+        <div class="svc-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><polyline points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+        </div>
+        <h3 class="svc-title">Scan to BIM</h3>
+        <p class="svc-desc">
+          Du bâtiment existant à la maquette numérique exploitable. Relevé
+          laser, nuage de points, modélisation Revit. Précision et délais
+          garantis.
+        </p>
+        <ul class="svc-deliverables" aria-label="Livrables Scan to BIM">
+          <li class="svc-deliv">Maquette Revit (.rvt) + IFC 4</li>
+          <li class="svc-deliv">Plans 2D (PDF + DWG)</li>
+          <li class="svc-deliv">Note méthodologique incluse</li>
+        </ul>
+        <div class="svc-price">5–15 jours · <strong>À partir de 1 500 € HT</strong></div>
+        <div class="svc-arrow" aria-hidden="true">
+          <svg viewBox="0 0 12 12"><path d="M2 10 L10 2 M10 2 H5 M10 2 V7"/></svg>
+        </div>
+      </article>
+
+      <!-- SVC 2 -->
+      <article class="svc-card" role="listitem" aria-label="Offre BIM Management">
+        <div class="svc-num" aria-hidden="true">02 / 03</div>
+        <div class="svc-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <h3 class="svc-title">BIM Management</h3>
+        <p class="svc-desc">
+          Un BIM Manager senior sans le coût d'un CDI. Mission ponctuelle ou
+          accompagnement récurrent — coordination, BEP, formation.
+        </p>
+        <ul class="svc-deliverables" aria-label="Livrables BIM Management">
+          <li class="svc-deliv">BEP rédigé et validé</li>
+          <li class="svc-deliv">Rapports contrôle qualité</li>
+          <li class="svc-deliv">Sessions de formation</li>
+        </ul>
+        <div class="svc-price">Mission ponctuelle · <strong>Forfait mensuel</strong></div>
+        <div class="svc-arrow" aria-hidden="true">
+          <svg viewBox="0 0 12 12"><path d="M2 10 L10 2 M10 2 H5 M10 2 V7"/></svg>
+        </div>
+      </article>
+
+      <!-- SVC 3 -->
+      <article class="svc-card" role="listitem" aria-label="Offre Audit et Conseil BIM">
+        <div class="svc-num" aria-hidden="true">03 / 03</div>
+        <div class="svc-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <h3 class="svc-title">Audit &amp; Conseil BIM</h3>
+        <p class="svc-desc">
+          Vos maquettes BIM valent-elles ce qu'elles vous coûtent ? Audit de
+          conformité, identification des non-conformités, roadmap de
+          correction priorisée.
+        </p>
+        <ul class="svc-deliverables" aria-label="Livrables Audit BIM">
+          <li class="svc-deliv">Rapport d'audit détaillé (PDF)</li>
+          <li class="svc-deliv">Roadmap de correction priorisée</li>
+          <li class="svc-deliv">Restitution 1h incluse</li>
+        </ul>
+        <div class="svc-price">Rapport sous <strong>5 jours ouvrés</strong></div>
+        <div class="svc-arrow" aria-hidden="true">
+          <svg viewBox="0 0 12 12"><path d="M2 10 L10 2 M10 2 H5 M10 2 V7"/></svg>
+        </div>
+      </article>
     </div>
   </section>
 
-  <!-- CTA Band -->
-  <section class="cta-band">
+  <!-- ══════════════════════════════
+       PROJETS — FOND OFF-WHITE
+  ══════════════════════════════ -->
+  <section class="projects-section section-pad" aria-labelledby="projects-heading">
     <div class="container">
-      <div class="cta-band__inner">
+      <div class="projects-header">
         <div>
-          <h2 class="cta-band__title">Discutons de votre projet.</h2>
-          <p class="cta-band__subtitle">Échangeons sur vos besoins en architecture, relevé 3D ou modélisation BIM. Réponse sous 48h.</p>
-          <div class="cta-band__contact">
-            <!-- contact@a3studio.fr : email à confirmer -->
-            <a href="mailto:contact@a3studio.fr">📧 contact@a3studio.fr</a>
-            <!-- [LINKEDIN URL] : remplacer # -->
-            <a href="https://www.linkedin.com/in/s%C3%A9bastien-bertucci-77523326/" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
-          </div>
+          <div class="eyebrow">Réalisations</div>
+          <h2 id="projects-heading" class="t-h1" style="max-width:420px">
+            Des projets concrets.<br>Des livrables <em>mesurables.</em>
+          </h2>
         </div>
-        <a href="contact.html" class="btn-blanc">Nous contacter</a>
+        <a href="realisations.html" class="btn-s-dark">Voir tous les projets →</a>
+      </div>
+
+      <div class="proj-grid" role="list">
+        <!-- PROJET 1 -->
+        <article class="proj-card" role="listitem">
+          <div class="proj-thumb" style="background:linear-gradient(135deg,#1a1a1a,#0f0f0f)">
+            <!-- [IMAGE PROJET 1] : réhabilitation industrielle 600x400px -->
+            <!-- <img src="images/projet-1.jpg" alt="Réhabilitation bâtiment industriel — maquette BIM Revit LOD 300" loading="lazy"> -->
+            <svg viewBox="0 0 220 130" style="width:80%;opacity:0.4" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="15" y="20" width="190" height="95" fill="none" stroke="white" stroke-width="0.6"/>
+              <rect x="28" y="34" width="58" height="62" fill="rgba(224,92,26,0.18)" stroke="rgba(224,92,26,0.45)" stroke-width="0.6"/>
+              <rect x="96" y="34" width="50" height="38" fill="none" stroke="white" stroke-width="0.4"/>
+              <rect x="96" y="80" width="94" height="35" fill="none" stroke="white" stroke-width="0.4"/>
+              <line x1="15" y1="72" x2="205" y2="72" stroke="white" stroke-width="0.3" stroke-dasharray="3,3"/>
+              <circle cx="57" cy="56" r="3.5" fill="#e05c1a"/>
+            </svg>
+            <div class="proj-thumb-badge">Architecture</div>
+            <div class="proj-metric">
+              <div class="proj-metric-val orange">1 200 m²</div>
+              <div class="proj-metric-label">Surface</div>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-cat">Architecture · Mission complète</div>
+            <h3 class="proj-title">Réhabilitation d'un bâtiment industriel</h3>
+            <p class="proj-meta">LOD 300 · 12 jours · Maquette Revit + Plans 2D + Notice PC</p>
+          </div>
+        </article>
+
+        <!-- PROJET 2 -->
+        <article class="proj-card" role="listitem">
+          <div class="proj-thumb" style="background:linear-gradient(135deg,#0d1520,#070e18)">
+            <!-- [IMAGE PROJET 2] : usine industrielle 600x400px -->
+            <!-- <img src="images/projet-2.jpg" alt="Relevé 3D usine industrielle — nuage de points 45M" loading="lazy"> -->
+            <svg viewBox="0 0 220 130" style="width:80%;opacity:0.5" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <g fill="#e05c1a" opacity="0.85">
+                <circle cx="22" cy="30" r="1.2"/><circle cx="36" cy="27" r="0.8"/><circle cx="50" cy="32" r="1.2"/>
+                <circle cx="64" cy="28" r="0.8"/><circle cx="78" cy="31" r="1.2"/><circle cx="92" cy="27" r="0.8"/>
+                <circle cx="106" cy="33" r="1.2"/><circle cx="120" cy="29" r="0.8"/><circle cx="134" cy="31" r="1.2"/>
+                <circle cx="148" cy="27" r="0.8"/><circle cx="162" cy="32" r="1.2"/><circle cx="176" cy="28" r="0.8"/>
+              </g>
+              <g fill="rgba(245,158,11,0.65)">
+                <circle cx="25" cy="65" r="1"/><circle cx="40" cy="62" r="1.2"/><circle cx="55" cy="67" r="0.8"/>
+                <circle cx="70" cy="63" r="1.2"/><circle cx="85" cy="66" r="0.8"/><circle cx="100" cy="62" r="1"/>
+                <circle cx="115" cy="67" r="1.2"/><circle cx="130" cy="64" r="0.8"/><circle cx="145" cy="66" r="1"/>
+              </g>
+              <g fill="rgba(255,255,255,0.2)">
+                <circle cx="20" cy="100" r="0.8"/><circle cx="36" cy="97" r="1"/><circle cx="52" cy="102" r="0.8"/>
+                <circle cx="68" cy="98" r="1"/><circle cx="84" cy="101" r="0.8"/><circle cx="100" cy="97" r="1"/>
+                <circle cx="116" cy="102" r="0.8"/><circle cx="132" cy="99" r="1"/><circle cx="148" cy="101" r="0.8"/>
+              </g>
+            </svg>
+            <div class="proj-thumb-badge">Scan laser</div>
+            <div class="proj-metric">
+              <div class="proj-metric-val ambre">45M pts</div>
+              <div class="proj-metric-label">Nuage de points</div>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-cat">Scan laser &amp; Modélisation BIM</div>
+            <h3 class="proj-title">Relevé 3D — Usine industrielle</h3>
+            <p class="proj-meta">LOD 350 · 10 jours · Revit MEP + Structure + IFC 4</p>
+          </div>
+        </article>
+
+        <!-- PROJET 3 -->
+        <article class="proj-card" role="listitem">
+          <div class="proj-thumb" style="background:linear-gradient(135deg,#1c140a,#110c04)">
+            <!-- [IMAGE PROJET 3] : patrimoine historique 600x400px -->
+            <!-- <img src="images/projet-3.jpg" alt="Modélisation monument historique — Scan to BIM LOD 350" loading="lazy"> -->
+            <svg viewBox="0 0 220 130" style="width:80%;opacity:0.45" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <polygon points="110,10 195,50 195,110 110,122 25,110 25,50" fill="none" stroke="white" stroke-width="0.6"/>
+              <polygon points="110,22 182,56 182,104 110,112 38,104 38,56" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="0.4"/>
+              <line x1="110" y1="10" x2="110" y2="122" stroke="rgba(224,92,26,0.4)" stroke-width="0.5" stroke-dasharray="3,3"/>
+              <circle cx="110" cy="66" r="9" fill="none" stroke="#e05c1a" stroke-width="0.8" opacity="0.6"/>
+              <circle cx="110" cy="66" r="3" fill="#e05c1a" opacity="0.9"/>
+              <circle cx="38" cy="104" r="2.5" fill="#f59e0b" opacity="0.65"/>
+              <circle cx="182" cy="104" r="2.5" fill="#f59e0b" opacity="0.65"/>
+            </svg>
+            <div class="proj-thumb-badge">Patrimoine</div>
+            <div class="proj-metric">
+              <div class="proj-metric-val orange">±3mm</div>
+              <div class="proj-metric-label">Précision</div>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-cat">Scan to BIM · Patrimoine</div>
+            <h3 class="proj-title">Modélisation — Monument historique</h3>
+            <p class="proj-meta">LOD 350 · 800 m² · Plans façades + Note méthodologique</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       APPROCHE — FOND BLANC
+  ══════════════════════════════ -->
+  <section class="approach-section section-pad" aria-labelledby="approach-heading">
+    <div class="container">
+      <div>
+        <div class="eyebrow">Méthode</div>
+        <h2 id="approach-heading" class="t-h1" style="max-width:360px">
+          Notre <em>approche.</em>
+        </h2>
+      </div>
+      <div class="approach-grid" role="list">
+        <div class="app-card" role="listitem">
+          <div class="app-card-num" aria-hidden="true">01</div>
+          <h3 class="app-card-title">Vision spatiale</h3>
+          <p class="t-body-sm">
+            Architectes avant tout, nous lisons un bâtiment avant de le
+            scanner. Cette lecture métier garantit des maquettes cohérentes,
+            pas seulement géométriquement exactes.
+          </p>
+          <div class="app-card-more" aria-hidden="true">En savoir plus →</div>
+        </div>
+        <div class="app-card" role="listitem">
+          <div class="app-card-num" aria-hidden="true">02</div>
+          <h3 class="app-card-title">Maîtrise Scan to BIM</h3>
+          <p class="t-body-sm">
+            Du nuage de points brut à la maquette exploitable, nous maîtrisons
+            chaque étape — acquisition, registration, modélisation, contrôle
+            qualité.
+          </p>
+          <div class="app-card-more" aria-hidden="true">En savoir plus →</div>
+        </div>
+        <div class="app-card" role="listitem">
+          <div class="app-card-num" aria-hidden="true">03</div>
+          <h3 class="app-card-title">Gestion des données</h3>
+          <p class="t-body-sm">
+            Nous structurons les informations de vos bâtiments pour alimenter
+            tout le cycle de vie — de la rénovation à la GMAO.
+          </p>
+          <div class="app-card-more" aria-hidden="true">En savoir plus →</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       CTA BAND — FOND ORANGE
+  ══════════════════════════════ -->
+  <section class="cta-section" aria-labelledby="cta-heading">
+    <svg class="cta-deco" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="40" y="30" width="280" height="200" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="70" y="55" width="100" height="80" fill="none" stroke="white" stroke-width="0.8"/>
+      <rect x="185" y="55" width="110" height="80" fill="none" stroke="white" stroke-width="0.8"/>
+      <rect x="70" y="150" width="225" height="65" fill="none" stroke="white" stroke-width="0.8"/>
+      <line x1="40" y1="148" x2="320" y2="148" stroke="white" stroke-width="0.5" stroke-dasharray="5,5"/>
+      <circle cx="120" cy="95" r="5" fill="white" opacity="0.5"/>
+      <circle cx="240" cy="95" r="5" fill="white" opacity="0.5"/>
+      <circle cx="180" cy="182" r="5" fill="white" opacity="0.5"/>
+    </svg>
+    <div class="container">
+      <div class="cta-grid">
+        <div>
+          <div class="cta-eyebrow" aria-hidden="true">Parlons de votre projet</div>
+          <h2 id="cta-heading" class="cta-h2">Discutons de votre projet.</h2>
+          <p class="cta-sub">
+            Échangeons sur vos besoins en architecture, relevé 3D ou
+            modélisation BIM. Réponse sous 48h avec une première approche
+            chiffrée.
+          </p>
+          <address class="cta-contacts" style="font-style:normal">
+            <div class="cta-contact-item">
+              <strong>Email</strong>
+              <a href="mailto:contact@a3studio.fr" style="color:rgba(255,255,255,0.5)">contact@a3studio.fr</a>
+            </div>
+            <div class="cta-contact-item">
+              <strong>Réseau</strong>
+              <a href="#" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5)"><!-- [LINKEDIN URL] -->LinkedIn A3 Studio</a>
+            </div>
+            <div class="cta-contact-item">
+              <strong>Localisation</strong>
+              Paris, France
+            </div>
+          </address>
+        </div>
+        <div class="cta-btns">
+          <a href="contact.html" class="btn-w">Déposer un brief →</a>
+          <a href="realisations.html" class="btn-ghost">Voir les réalisations</a>
+        </div>
       </div>
     </div>
   </section>
 
 </main>
 
-<!-- ═══════════════════════════════════════════
-     FOOTER — identique sur toutes les pages
-     Pour modifier : chercher ce commentaire dans
-     tous les fichiers HTML
-     ═══════════════════════════════════════════ -->
-<footer class="footer" role="contentinfo">
-  <div class="container">
-    <div class="footer__top">
-      <a href="index.html" class="footer__logo">A3 <span>STUDIO</span></a>
-      <nav class="footer__links" aria-label="Liens footer">
-        <a href="realisations.html" class="footer__link">Projets</a>
-        <a href="offres.html" class="footer__link">Expertise</a>
-        <a href="apropos.html" class="footer__link">À propos</a>
-        <a href="mentions.html" class="footer__link">Mentions légales</a>
-      </nav>
-      <div class="footer__contacts">
-        <!-- contact@a3studio.fr : email à confirmer -->
-        <a href="mailto:contact@a3studio.fr" class="footer__contact">📧 contact@a3studio.fr</a>
-        <!-- [LINKEDIN URL] : remplacer # -->
-        <a href="#" class="footer__contact" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      © 2024 A3 Studio — Tous droits réservés.<br>
-      Agence d'architecture augmentée — Paris, France.
-    </div>
-  </div>
-</footer>
+<!-- FOOTER injecté par partials.js -->
+<div id="footer-placeholder"></div>
 
+<script src="js/partials.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

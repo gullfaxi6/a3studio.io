@@ -1,123 +1,105 @@
-/* ═══════════════════════════════════════════
-   A3 STUDIO — JavaScript principal
-   Navigation · Hamburger · Onglets · Scroll
-   ═══════════════════════════════════════════ */
+/* ============================================================
+   A3 STUDIO — main.js
+   Navigation scroll · Hamburger · Onglets · Tally fallback
+   ============================================================ */
 
 (function () {
   'use strict';
 
-  /* --- Navigation scroll --- */
-  const nav = document.querySelector('.nav');
+  /* ── NAV SCROLL ── */
+  const nav = document.querySelector('.site-nav');
   if (nav) {
-    window.addEventListener('scroll', function () {
+    window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 50);
     }, { passive: true });
   }
 
-  /* --- Hamburger menu --- */
-  const hamburger = document.querySelector('.nav__hamburger');
-  const mobileMenu = document.querySelector('.mobile-menu');
-  const overlay = document.querySelector('.mobile-overlay');
+  /* ── HAMBURGER MENU ── */
+  const hamburger   = document.querySelector('.nav-hamburger');
+  const mobileMenu  = document.querySelector('.mobile-menu');
+  const overlay     = document.querySelector('.mobile-overlay');
 
   function openMenu() {
-    if (!hamburger || !mobileMenu || !overlay) return;
-    hamburger.setAttribute('aria-expanded', 'true');
-    mobileMenu.classList.add('active');
-    overlay.classList.add('active');
-    document.body.classList.add('menu-open');
+    mobileMenu?.classList.add('open');
+    overlay?.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    hamburger?.classList.add('open');
+    hamburger?.setAttribute('aria-expanded', 'true');
   }
-
   function closeMenu() {
-    if (!hamburger || !mobileMenu || !overlay) return;
-    hamburger.setAttribute('aria-expanded', 'false');
-    mobileMenu.classList.remove('active');
-    overlay.classList.remove('active');
-    document.body.classList.remove('menu-open');
+    mobileMenu?.classList.remove('open');
+    overlay?.classList.remove('open');
+    document.body.style.overflow = '';
+    hamburger?.classList.remove('open');
+    hamburger?.setAttribute('aria-expanded', 'false');
   }
 
-  if (hamburger) {
-    hamburger.addEventListener('click', function () {
-      var expanded = this.getAttribute('aria-expanded') === 'true';
-      expanded ? closeMenu() : openMenu();
+  hamburger?.addEventListener('click', () => {
+    const isOpen = mobileMenu?.classList.contains('open');
+    isOpen ? closeMenu() : openMenu();
+  });
+  overlay?.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeMenu();
+  });
+  document.querySelectorAll('.mobile-nav-link').forEach(l => {
+    l.addEventListener('click', closeMenu);
+  });
+
+  /* ── ONGLETS (tabs) ── */
+  function initTabs(container) {
+    const btns   = container.querySelectorAll('.tab-btn');
+    const panels = container.querySelectorAll('.tab-panel');
+
+    function activate(idx) {
+      btns.forEach((b, i) => {
+        const active = i === idx;
+        b.classList.toggle('active', active);
+        b.setAttribute('aria-selected', active);
+        b.setAttribute('tabindex', active ? '0' : '-1');
+      });
+      panels.forEach((p, i) => {
+        p.classList.toggle('active', i === idx);
+      });
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener('click', () => activate(i));
+      btn.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight') { e.preventDefault(); activate((i + 1) % btns.length); btns[(i + 1) % btns.length].focus(); }
+        if (e.key === 'ArrowLeft')  { e.preventDefault(); activate((i - 1 + btns.length) % btns.length); btns[(i - 1 + btns.length) % btns.length].focus(); }
+      });
     });
   }
 
-  if (overlay) {
-    overlay.addEventListener('click', closeMenu);
-  }
+  document.querySelectorAll('[data-tabs]').forEach(initTabs);
 
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('active')) {
-      closeMenu();
-      hamburger.focus();
+  /* ── ACTIVE NAV LINK (page courante) ── */
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-link[href], .mobile-nav-link[href]').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+      link.classList.add('active');
     }
   });
 
-  // Close menu on link click
-  if (mobileMenu) {
-    var mobileLinks = mobileMenu.querySelectorAll('.mobile-menu__link');
-    mobileLinks.forEach(function (link) {
-      link.addEventListener('click', closeMenu);
-    });
-  }
-
-  /* --- Onglets (tabs) --- */
-  var tabContainer = document.querySelector('.tabs');
-  if (tabContainer) {
-    var tabButtons = tabContainer.querySelectorAll('.tabs__btn');
-    var tabPanels = tabContainer.querySelectorAll('.tabs__panel');
-
-    function activateTab(btn) {
-      tabButtons.forEach(function (b) {
-        b.setAttribute('aria-selected', 'false');
-        b.setAttribute('tabindex', '-1');
-      });
-      tabPanels.forEach(function (p) {
-        p.classList.remove('active');
-      });
-
-      btn.setAttribute('aria-selected', 'true');
-      btn.setAttribute('tabindex', '0');
-      btn.focus();
-
-      var panelId = btn.getAttribute('aria-controls');
-      var panel = document.getElementById(panelId);
-      if (panel) {
-        panel.classList.add('active');
-      }
+  /* ── TALLY FALLBACK ── */
+  document.querySelectorAll('iframe[data-tally]').forEach(iframe => {
+    const fallback = iframe.nextElementSibling;
+    if (fallback && fallback.classList.contains('tally-fallback')) {
+      iframe.addEventListener('load', () => { fallback.style.display = 'none'; });
+      setTimeout(() => {
+        if (iframe.offsetHeight < 50) fallback.style.display = 'block';
+      }, 3000);
     }
+  });
 
-    tabButtons.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        activateTab(this);
-      });
-    });
-
-    // Keyboard navigation
-    tabContainer.querySelector('[role="tablist"]').addEventListener('keydown', function (e) {
-      var index = Array.from(tabButtons).indexOf(document.activeElement);
-      if (index === -1) return;
-
-      if (e.key === 'ArrowRight') {
-        e.preventDefault();
-        var next = (index + 1) % tabButtons.length;
-        activateTab(tabButtons[next]);
-      } else if (e.key === 'ArrowLeft') {
-        e.preventDefault();
-        var prev = (index - 1 + tabButtons.length) % tabButtons.length;
-        activateTab(tabButtons[prev]);
-      }
-    });
-  }
-
-  /* --- Tally form fallback --- */
-  var tallyIframe = document.querySelector('.tally-iframe');
-  var tallyFallback = document.querySelector('.form-fallback');
-
-  if (tallyIframe && tallyFallback) {
-    tallyIframe.addEventListener('load', function () {
-      tallyFallback.style.display = 'none';
-    });
-  }
+  /* ── HOVER APPROCHE — "En savoir plus" ── */
+  document.querySelectorAll('.app-card').forEach(card => {
+    const more = card.querySelector('.app-card-more');
+    if (!more) return;
+    card.addEventListener('mouseenter', () => { more.style.opacity = '1'; });
+    card.addEventListener('mouseleave', () => { more.style.opacity = '0'; });
+  });
 
 })();
