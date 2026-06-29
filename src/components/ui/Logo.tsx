@@ -83,7 +83,7 @@ export default function Logo({
         <span className={`block font-serif text-[1.2rem] leading-none tracking-[0.1em] ${textColor}`}>
           A3 STUDIO
         </span>
-        <span className={`mt-1 block text-[0.64rem] uppercase leading-none tracking-[0.18em] ${subColor}`}>
+        <span className={`mt-1 block whitespace-nowrap text-[0.64rem] uppercase leading-none tracking-[0.18em] ${subColor}`}>
           Architecture augmentée
         </span>
       </span>
