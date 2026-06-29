@@ -40,7 +40,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${cormorant.variable} ${inter.variable}`}>
+    <html
+      lang="fr"
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+      className={`${cormorant.variable} ${inter.variable}`}
+    >
       <body>
         <script
           dangerouslySetInnerHTML={{
