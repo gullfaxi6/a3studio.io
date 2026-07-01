@@ -68,8 +68,11 @@ export default function Logo({
   // header : symbole décoratif (alt vide) + wordmark texte porteur du nom accessible
   const textColor = onDark ? "text-on-dark" : "text-ink";
   const subColor = onDark ? "text-on-dark-muted" : "text-slate";
+  // Le symbole est calé sur la hauteur EXACTE du bloc texte (wordmark + baseline)
+  // pour un alignement à ras haut/bas : 1.2rem (wordmark) + 0.25rem (mt-1) + 0.64rem
+  // (baseline) = 2.09rem. `items-stretch` fait suivre le symbole si le texte évolue.
   return (
-    <span className={`inline-flex items-center gap-3 ${className}`}>
+    <span className={`inline-flex items-stretch gap-3 ${className}`}>
       <Image
         src={symbolSrc}
         alt=""
@@ -77,9 +80,9 @@ export default function Logo({
         width={SYMBOL.w}
         height={SYMBOL.h}
         priority={priority}
-        className={`${h} w-auto`}
+        className="h-[2.09rem] w-auto self-stretch"
       />
-      <span className="leading-none">
+      <span className="flex flex-col justify-center leading-none">
         <span className={`block font-serif text-[1.2rem] leading-none tracking-[0.1em] ${textColor}`}>
           A3 STUDIO
         </span>
