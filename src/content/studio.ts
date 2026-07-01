@@ -5,8 +5,9 @@
  */
 
 import { site, cta } from "./site";
+import { frDeep } from "@/lib/typo";
 
-export const studio = {
+export const studio = frDeep({
   founder: {
     eyebrow: "Fondateur",
     name: site.founder.name, // Sébastien Bertucci
@@ -14,7 +15,7 @@ export const studio = {
     bio:
       "Architecte DE HMONP, Sébastien Bertucci développe une expertise BIM depuis 2012. Il accompagne les maîtres d'ouvrage, architectes, entreprises et porteurs de projets dans la compréhension de l'existant, la coordination technique et la conception de projets maîtrisés.",
     complement:
-      "A3 Studio est né de la conviction qu'une approche indépendante, rigoureuse et sur-mesure permet de révéler le potentiel des bâtiments existants et de simplifier la transformation.",
+      "A3 Studio est né de la conviction qu'une approche indépendante, rigoureuse et sur mesure permet de révéler le potentiel des bâtiments existants et de simplifier la transformation.",
     image: {
       src: "/images/studio-founder-sebastien.webp",
       alt: "Portrait de Sébastien Bertucci, architecte DE HMONP et BIM Manager, fondateur d'A3 Studio.",
@@ -25,7 +26,7 @@ export const studio = {
       { icon: "building", label: "Architecte DE HMONP" },
       { icon: "box", label: "BIM Manager" },
       { icon: "clock", label: "Expertise BIM depuis 2012" },
-      { icon: "compass", label: "Approche sur-mesure" },
+      { icon: "compass", label: "Approche sur mesure" },
     ],
   },
 
@@ -72,14 +73,14 @@ export const studio = {
       { icon: "search", title: "Audits & analyses", subtitle: "Techniques & réglementaires" },
       { icon: "network", title: "Coordination BIM", subtitle: "Clashs & collaboration" },
       { icon: "file", title: "Livrables", subtitle: "Plans, coupes, maquettes, DOE" },
-      { icon: "cpu", title: "IA & automatisation", subtitle: "Automatisation & optimisation" },
+      { icon: "cpu", title: "IA & automatisation", subtitle: "Optimisation des process" },
     ],
   },
 
   ctaBand: {
-    title: "Parlons de votre projet.",
+    title: "Discutons de vos enjeux.",
     text: "Un échange pour comprendre vos enjeux et voir comment A3 Studio peut vous accompagner.",
     cta: cta.primary, // Échanger avec A3 Studio → /contact#contact
     secondaryCta: cta.technical, // Demander un audit → /contact?objet=audit#contact
   },
-};
+});

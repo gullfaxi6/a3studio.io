@@ -5,8 +5,9 @@
  */
 
 import { cta } from "./site";
+import { frDeep } from "@/lib/typo";
 
-export const livrables = {
+export const livrables = frDeep({
   // 4 bénéfices (icône + titre + une ligne) — réutilise PillarsRow
   benefits: [
     { icon: "eye", title: "Clarté", text: "Des informations lisibles pour comprendre l'essentiel." },
@@ -129,4 +130,4 @@ export const livrables = {
     text: "Vous n'avez pas encore de projet défini ? Échangeons sur vos intentions, vos contraintes et vos objectifs.",
     cta: cta.primary, // Échanger avec A3 Studio → /contact#contact
   },
-};
+});

@@ -5,6 +5,8 @@
  * réalisations d'A3 Studio (visuels d'ambiance / process).
  */
 
+import { frDeep } from "@/lib/typo";
+
 export type HeroContent = {
   label: string;
   titleLines: string[]; // rendu en un seul <h1> avec <br>
@@ -13,7 +15,7 @@ export type HeroContent = {
   image?: { src: string; alt: string; priority?: boolean };
 };
 
-export const heroes: Record<string, HeroContent> = {
+export const heroes: Record<string, HeroContent> = frDeep({
   home: {
     label: "Accueil",
     titleLines: ["Analyser le réel.", "Anticiper les usages.", "Architecturer avec clarté."],
@@ -93,4 +95,4 @@ export const heroes: Record<string, HeroContent> = {
       priority: true,
     },
   },
-};
+});

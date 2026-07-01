@@ -5,8 +5,9 @@
  */
 
 import { cta } from "./site";
+import { frDeep } from "@/lib/typo";
 
-export const home = {
+export const home = frDeep({
   // 4 piliers (icône + titre + une ligne)
   pillars: [
     { icon: "scan", title: "Existant", text: "Relevés 3D et analyse fine du bâti et de son contexte." },
@@ -59,7 +60,7 @@ export const home = {
     items: [
       {
         title: "Architecture",
-        text: "Conception architecturale et suivi de projet, pour des projets cohérents et durables.",
+        text: "Conception architecturale et suivi de chantier, pour des réalisations cohérentes et durables.",
         href: "/expertise",
         image: {
           src: "/images/accueil/expertise-architecture.webp",
@@ -104,8 +105,8 @@ export const home = {
 
   // Bande CTA finale
   ctaBand: {
-    title: "Un projet commence par une conversation.",
+    title: "Faisons connaissance autour de votre projet.",
     text: "Vous avez une idée, une problématique ou un bâtiment à comprendre ? Discutons‑en.",
     cta: cta.rdv,
   },
-};
+});

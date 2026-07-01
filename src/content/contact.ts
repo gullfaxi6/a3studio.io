@@ -5,6 +5,8 @@
 
 // Objet de la demande. La clé `value` correspond au paramètre d'URL ?objet=…
 // (ex. /contact?objet=audit présélectionne « Audit / analyse du projet »).
+import { frDeep } from "@/lib/typo";
+
 export const requestObjects = [
   { value: "echange", label: "Échange / prise de contact" },
   { value: "audit", label: "Audit / analyse du projet" },
@@ -84,7 +86,7 @@ export const formMicrocopy = {
 } as const;
 
 /** Contenus éditoriaux de la page Contact (hors formulaire). */
-export const contactPage = {
+export const contactPage = frDeep({
   benefits: [
     { icon: "ear", title: "Écoute", text: "Vos besoins et vos contraintes." },
     { icon: "eye", title: "Clarté", text: "Des réponses simples et utiles." },
@@ -100,4 +102,4 @@ export const contactPage = {
     text: "La justesse d'un projet commence par une compréhension précise de l'existant.",
     attribution: "A3 Studio",
   },
-};
+});

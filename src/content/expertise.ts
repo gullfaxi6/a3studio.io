@@ -5,13 +5,14 @@
  */
 
 import { cta } from "./site";
+import { frDeep } from "@/lib/typo";
 
-export const expertise = {
+export const expertise = frDeep({
   // 4 bénéfices (icône + titre + une ligne) — réutilise PillarsRow
   benefits: [
     { icon: "scan", title: "Compréhension fine", text: "du réel et de son contexte." },
     { icon: "box", title: "Modélisation intelligente", text: "pour décider avec précision." },
-    { icon: "target", title: "Décisions éclairées", text: "grâce à la donnée fiable." },
+    { icon: "target", title: "Décisions éclairées", text: "grâce à des données fiables." },
     { icon: "shield", title: "Projets sécurisés", text: "de la conception à la réalisation." },
   ],
 
@@ -105,4 +106,4 @@ export const expertise = {
     text: "Échangeons sur vos enjeux. Nous vous aidons à y voir clair et à avancer avec confiance.",
     cta: cta.rdv, // Prendre rendez-vous → /contact#contact
   },
-};
+});

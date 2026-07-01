@@ -5,8 +5,9 @@
  */
 
 import { cta } from "./site";
+import { frDeep } from "@/lib/typo";
 
-export const methode = {
+export const methode = frDeep({
   // 4 principes (icône + titre + une ligne) — réutilise PillarsRow
   principles: [
     { icon: "grid", title: "Structurée", text: "Un cadre clair à chaque étape." },
@@ -44,7 +45,7 @@ export const methode = {
         title: "Concevoir",
         objective: "Imaginer des solutions justes et adaptées.",
         text: "Nous concevons des solutions architecturales pertinentes, en conciliant usages, esthétique, faisabilité technique et performance.",
-        objectives: ["Explorer les scénarios", "Arbitrer les choix éclairés", "Optimiser technique et réglementaire"],
+        objectives: ["Explorer les scénarios", "Éclairer les arbitrages", "Optimiser les aspects techniques et réglementaires"],
         deliverables: ["Plans, esquisses, 3D", "Scénarios comparés", "Études de faisabilité"],
       },
       {
@@ -69,7 +70,7 @@ export const methode = {
         objective: "Accompagner jusqu'à la livraison.",
         text: "Selon la mission confiée, nous accompagnons la réalisation afin de suivre la qualité d'exécution et la conformité des travaux au projet.",
         objectives: ["Suivre le chantier", "Contrôler la qualité", "Assister le maître d'ouvrage lors des opérations de réception et suivre la levée des réserves"],
-        deliverables: ["Comptes rendus de chantier", "Suivi des opérations de réception et des réserves", "Suivi et contrôle du DOE, selon le périmètre de mission"],
+        deliverables: ["Comptes rendus de chantier", "Suivi des opérations de réception et des réserves", "Suivi du dossier des ouvrages exécutés (DOE), selon le périmètre"],
       },
     ],
   },
@@ -105,4 +106,4 @@ export const methode = {
     text: "Échangeons sur votre contexte et voyons comment cette démarche s'applique à vos enjeux.",
     cta: cta.rdv, // Prendre rendez-vous → /contact#contact
   },
-};
+});
