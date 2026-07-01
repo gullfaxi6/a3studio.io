@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -29,12 +31,18 @@ export const metadata: Metadata = {
     template: `%s — ${site.name}`,
   },
   description: site.defaultDescription,
+  alternates: { canonical: "/" },
   openGraph: {
     title: site.defaultTitle,
     description: site.defaultDescription,
     siteName: site.name,
     locale: "fr_FR",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.defaultTitle,
+    description: site.defaultDescription,
   },
 };
 
@@ -64,6 +72,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceJsonLd()) }}
         />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

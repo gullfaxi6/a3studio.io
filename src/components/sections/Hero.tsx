@@ -67,7 +67,7 @@ export default function Hero({ label, titleLines, intro, ctas, image, balanced =
             </div>
             <h1 className={h1Cls}>
               {titleLines.map((line, i) => (
-                <span key={i} data-hero-line className="block">
+                <span key={i} data-hero-line className="block text-balance">
                   {line}
                 </span>
               ))}
