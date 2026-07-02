@@ -32,7 +32,7 @@ export const site = {
   founder: {
     name: "Sébastien Bertucci",
     title: "Architecte DE HMONP — BIM Manager",
-    since: "depuis 2012",
+    since: "depuis 2015",
   },
 
   // Données légales. Les champs CONFIRMÉS sont en dur ; les champs NON confirmés

@@ -92,7 +92,7 @@ export const methode = frDeep({
   understand: {
     eyebrow: "Notre approche",
     title: "Comprendre avant de concevoir, analyser avant de décider.",
-    body: "En plaçant la compréhension du réel au cœur de notre démarche — avec une double culture d'architecte DE HMONP et une expertise BIM développée depuis 2012 — nous transformons l'incertitude en décisions claires.",
+    body: "En plaçant la compréhension du réel au cœur de notre démarche — avec une double culture d'architecte DE HMONP et une expertise BIM de référent développée depuis 2015 — nous transformons l'incertitude en décisions claires.",
     items: [
       { icon: "scan", title: "Analyse du réel", text: "Mesurer et comprendre l'existant pour poser des bases fiables." },
       { icon: "database", title: "Fiabilité des données", text: "Des données vérifiées sur le terrain, exploitables en confiance." },
