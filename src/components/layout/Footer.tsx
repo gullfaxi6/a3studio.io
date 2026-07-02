@@ -10,7 +10,10 @@ export default function Footer() {
   return (
     <footer className="on-dark border-t border-line bg-near-black text-on-dark">
       <Container>
-        <Reveal className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
+        {/* lg : colonnes calées sur leur contenu + espace réparti également entre
+            les 4 blocs (l'ancienne grille 4×1fr laissait des vides très inégaux
+            entre les contenus, la colonne Navigation étant étroite). */}
+        <Reveal className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[auto_auto_auto_auto] lg:justify-between">
           {/* Marque */}
           <div>
             <Logo variant="header" onDark symbolHeight="h-9" />

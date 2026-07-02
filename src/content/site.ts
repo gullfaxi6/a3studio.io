@@ -16,7 +16,7 @@ export const site = {
   targetDomain: "a3studio.fr",
 
   // Coordonnées (source unique)
-  email: "s.bertucci@a3studio.io",
+  email: "contact@a3studio.io",
   phone: "+33 6 98 46 69 12",
   phoneNational: "06 98 46 69 12",
   phoneHref: "tel:+33698466912",
