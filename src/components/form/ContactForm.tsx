@@ -305,9 +305,11 @@ export default function ContactForm() {
           {errors.message && <p id="message-error" className="mt-1.5 text-body-sm text-error">{errors.message}</p>}
         </div>
 
+        {/* flex-col + label en grow : les deux selects restent alignés
+            horizontalement même quand un label passe sur deux lignes. */}
         <div className="grid gap-6 sm:grid-cols-2">
-          <div>
-            <label htmlFor="stage" className={labelBase}>
+          <div className="flex flex-col">
+            <label htmlFor="stage" className={`${labelBase} grow`}>
               À quelle étape en êtes-vous ?
               <Optional />
             </label>
@@ -322,8 +324,8 @@ export default function ContactForm() {
               ))}
             </select>
           </div>
-          <div>
-            <label htmlFor="budget" className={labelBase}>
+          <div className="flex flex-col">
+            <label htmlFor="budget" className={`${labelBase} grow`}>
               {formMicrocopy.budgetLabel}
               <Optional />
             </label>

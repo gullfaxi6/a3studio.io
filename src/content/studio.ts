@@ -13,9 +13,9 @@ export const studio = frDeep({
     name: site.founder.name, // Sébastien Bertucci
     title: site.founder.title, // Architecte DE HMONP — BIM Manager
     bio:
-      "Architecte DE HMONP, Sébastien Bertucci développe une expertise BIM depuis 2012. Il accompagne les maîtres d'ouvrage, architectes, entreprises et porteurs de projets dans la compréhension de l'existant, la coordination technique et la conception de projets maîtrisés.",
+      "Architecte DE HMONP diplômé de l'ENSA Montpellier, Sébastien Bertucci cumule 16 ans de maîtrise d'œuvre — du concours à la livraison — sur des opérations de logement collectif et d'équipements publics. Référent BIM en agence depuis 2015, il a structuré les méthodes de production : protocoles BIM (BEP), maquettes fédérées, déploiement jusqu'au niveau 3 et formation d'une vingtaine de collaborateurs.",
     complement:
-      "A3 Studio est né de la conviction qu'une approche indépendante, rigoureuse et sur mesure permet de révéler le potentiel des bâtiments existants et de simplifier la transformation.",
+      "Plus de 1 200 logements conçus et livrés, lauréat de concours, la coordination d'équipes pluridisciplinaires — architectes, bureaux d'études, entreprises et maîtrise d'ouvrage : A3 Studio est né de cette culture de la production, avec la conviction qu'une approche indépendante, rigoureuse et sur mesure révèle le potentiel des bâtiments existants.",
     image: {
       src: "/images/studio-founder-sebastien.webp",
       alt: "Portrait de Sébastien Bertucci, architecte DE HMONP et BIM Manager, fondateur d'A3 Studio.",
@@ -24,9 +24,9 @@ export const studio = frDeep({
     objectPosition: "center 15%",
     indicators: [
       { icon: "building", label: "Architecte DE HMONP" },
-      { icon: "box", label: "BIM Manager" },
-      { icon: "clock", label: "Expertise BIM depuis 2012" },
-      { icon: "compass", label: "Approche sur mesure" },
+      { icon: "clock", label: "16 ans de maîtrise d'œuvre" },
+      { icon: "box", label: "Référent BIM depuis 2015" },
+      { icon: "layers", label: "1 200+ logements conçus et livrés" },
     ],
   },
 
