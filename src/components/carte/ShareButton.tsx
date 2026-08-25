@@ -45,18 +45,16 @@ export default function ShareButton({ url, title, text, className = "" }: Props)
     }
   }
 
+  const Icone = copied ? Check : Share2;
+
   return (
     <button
       type="button"
       onClick={handleShare}
       aria-live="polite"
-      className={`group inline-flex items-center justify-center gap-2 border border-on-dark/25 px-5 py-3.5 text-button font-semibold uppercase tracking-[0.08em] text-on-dark transition-colors duration-200 ease-brand hover:border-on-dark/60 ${className}`}
+      className={`flex flex-1 items-center justify-center gap-2.5 py-3 text-body-sm text-on-dark-muted transition-colors duration-200 ease-brand hover:text-on-dark ${className}`}
     >
-      {copied ? (
-        <Check size={16} strokeWidth={1.75} aria-hidden="true" className="text-accent" />
-      ) : (
-        <Share2 size={16} strokeWidth={1.75} aria-hidden="true" className="text-accent" />
-      )}
+      <Icone size={18} strokeWidth={1.5} aria-hidden="true" className="text-accent" />
       <span>{copied ? "Lien copié" : "Partager"}</span>
     </button>
   );

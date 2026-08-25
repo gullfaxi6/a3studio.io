@@ -38,7 +38,17 @@ export const carte = {
 
   website: site.url,
   linkedin: site.linkedin,
-  zone: site.location.zone,
+
+  /**
+   * Zone affichee sur la carte. Volontairement distincte de
+   * `site.location.zone` (« Île-de-France / France ») : la carte se presente
+   * en main propre, ou « Paris » est plus direct. Le siege social reste
+   * Saint-Cloud et n'apparait que dans les mentions legales (arbitrage A1).
+   */
+  zone: "Paris",
+
+  /** Accroche courte, sous le filet terracotta. */
+  strapline: "Architecture augmentée par la donnée.",
 
   // --- URLs ---------------------------------------------------------------
   /** URL canonique encodée dans le QR code. */
