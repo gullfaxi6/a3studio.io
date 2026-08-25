@@ -57,8 +57,8 @@ function personJsonLd() {
 
 export default function CartePage() {
   return (
-    <div className="on-dark min-h-screen bg-near-black text-on-dark">
-      <div className="mx-auto w-full max-w-[30rem] pb-14">
+    <div className="on-dark flex min-h-screen flex-col bg-near-black text-on-dark">
+      <div className="mx-auto flex w-full max-w-[30rem] flex-1 flex-col pb-10">
         {/* ---------- Visuel identitaire ---------- */}
         <div className="relative">
           {/* Rapport panoramique : un cadrage 4/3 amputerait le nuage de points
@@ -102,11 +102,13 @@ export default function CartePage() {
         </div>
 
         {/* ---------- Identité ----------
-            `relative` indispensable : le bloc visuel au-dessus est positionné,
-            donc il se peint APRÈS le contenu en flux normal. Sans cela le titre
-            remonté par -mt-6 passe derrière l'image au lieu de reposer sur son
-            dégradé. */}
-        <div className="relative -mt-9 px-7">
+            Le bloc ne chevauche plus le visuel : le nom se lit sur le fond de
+            page, jamais sur l'image. La continuité reste assurée par le dégradé
+            du hero, qui se termine exactement sur la couleur de fond — aucune
+            couture visible malgré la séparation.
+            `relative` conservé : le bloc visuel au-dessus est positionné et se
+            peindrait sinon par-dessus le contenu en flux normal. */}
+        <div className="relative mt-6 px-7">
           <h1 className="font-serif text-[2.5rem] leading-[1.05] tracking-[-0.01em] text-on-dark">
             {carte.fullName}
           </h1>
@@ -206,8 +208,12 @@ export default function CartePage() {
           </div>
         </div>
 
-        {/* ---------- Pied ---------- */}
-        <div className="mx-7 mt-7 border-t border-on-dark/15 pt-6">
+        {/* ---------- Pied ----------
+            `mt-auto` : sur un grand écran, le pied descend au bas de la fenêtre
+            au lieu de laisser une zone sombre vide en dessous. Sur un écran
+            court, la marge automatique se résout à zéro et seul le `pt-8`
+            sépare le pied du contenu. */}
+        <div className="mx-7 mt-auto border-t border-on-dark/15 pt-8">
           <p className="text-[0.7rem] uppercase tracking-[0.14em] text-on-dark-muted">
             {carte.org} <span className="mx-1 text-accent">/</span> {carte.zone}
           </p>
