@@ -109,11 +109,11 @@ export default function CartePage() {
             {carte.fullName}
           </h1>
 
-          <p className="mt-3 text-eyebrow uppercase leading-[1.5] tracking-[0.12em] text-on-dark-muted">
-            {carte.role}
-          </p>
-
-          <div aria-hidden="true" className="mt-6 h-px w-11 bg-accent" />
+          {/* Les disciplines tiennent lieu de qualification affichée : la barre
+              oblique terracotta est la signature de marque, et le titre complet
+              (« Architecte DE HMONP · BIM Manager ») reste porté par la propriété
+              TITLE de la vCard, donc il arrive bien dans le carnet d'adresses. */}
+          <div aria-hidden="true" className="mt-5 h-px w-11 bg-accent" />
 
           <p className="mt-5 text-body-sm text-on-dark-muted">
             {carte.expertise.map((item, index) => (
