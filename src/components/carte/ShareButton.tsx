@@ -8,6 +8,12 @@ type Props = {
   title: string;
   text: string;
   className?: string;
+  /**
+   * "inline" (défaut) : icône + libellé, rang tertiaire de la carte /sebastien.
+   * "icon" : pastille cerclée sans libellé, pour l'écran de partage.
+   * Le défaut préserve l'usage existant sur /sebastien.
+   */
+  variant?: "inline" | "icon";
 };
 
 /**
@@ -19,7 +25,13 @@ type Props = {
  * fonctionnalité à l'appel plutôt qu'au rendu — tester au rendu provoquerait une
  * différence entre le HTML serveur et le HTML client (erreur d'hydratation).
  */
-export default function ShareButton({ url, title, text, className = "" }: Props) {
+export default function ShareButton({
+  url,
+  title,
+  text,
+  className = "",
+  variant = "inline",
+}: Props) {
   const [copied, setCopied] = useState(false);
 
   async function handleShare() {
@@ -46,6 +58,20 @@ export default function ShareButton({ url, title, text, className = "" }: Props)
   }
 
   const Icone = copied ? Check : Share2;
+
+  if (variant === "icon") {
+    return (
+      <button
+        type="button"
+        onClick={handleShare}
+        // Sans libellé visible : le nom accessible passe par aria-label.
+        aria-label={copied ? "Lien copié" : "Partager ma carte"}
+        className={`flex h-12 w-12 items-center justify-center rounded-full border border-accent/50 text-accent transition-colors duration-200 ease-brand hover:border-accent ${className}`}
+      >
+        <Icone size={18} strokeWidth={1.5} aria-hidden="true" />
+      </button>
+    );
+  }
 
   return (
     <button
