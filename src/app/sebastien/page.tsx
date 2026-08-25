@@ -61,10 +61,12 @@ export default function CartePage() {
       <div className="mx-auto w-full max-w-[30rem] pb-14">
         {/* ---------- Visuel identitaire ---------- */}
         <div className="relative">
-          {/* Rapport proche du 16/9 : le visuel de référence est panoramique, un
-              cadrage 4/3 amputerait le nuage de points sur la gauche — c'est
-              précisément la partie qui raconte le Scan-to-BIM. */}
-          <div className="relative aspect-[16/10] w-full overflow-hidden sm:aspect-[16/9]">
+          {/* Rapport panoramique : un cadrage 4/3 amputerait le nuage de points
+              sur la gauche — c'est précisément la partie qui raconte le Scan-to-BIM.
+              Rapport élargi (20/11 au lieu de 16/10) pour abaisser la hauteur du
+              hero d'environ 12 % sans recadrer ni déformer : le nom et le CTA
+              remontent dans l'écran. */}
+          <div className="relative aspect-[20/11] w-full overflow-hidden sm:aspect-[2/1]">
             <Image
               src={carte.heroImage}
               alt={carte.heroImageAlt}
@@ -104,7 +106,7 @@ export default function CartePage() {
             donc il se peint APRÈS le contenu en flux normal. Sans cela le titre
             remonté par -mt-6 passe derrière l'image au lieu de reposer sur son
             dégradé. */}
-        <div className="relative -mt-6 px-7">
+        <div className="relative -mt-9 px-7">
           <h1 className="font-serif text-[2.5rem] leading-[1.05] tracking-[-0.01em] text-on-dark">
             {carte.fullName}
           </h1>
@@ -127,7 +129,10 @@ export default function CartePage() {
 
           <div aria-hidden="true" className="mt-6 h-0.5 w-14 bg-accent" />
 
-          <p className="mt-6 font-serif text-[1.35rem] leading-snug text-on-dark">
+          {/* Signature de marque, pas un titre : italique serif (style « Quote »
+              du design system) et teinte atténuée, pour qu'elle ne concurrence ni
+              le nom ni le CTA. Contraste on-dark-muted / near-black = 5,1:1, AA. */}
+          <p className="mt-6 font-serif text-[1.2rem] italic leading-snug text-on-dark-muted">
             {carte.strapline}
           </p>
         </div>
@@ -140,10 +145,13 @@ export default function CartePage() {
               « coins nets ») — c'est la direction visuelle demandée. */}
           <a
             href="/api/vcard"
-            className="group flex w-full items-center justify-center gap-3 rounded-[8px] bg-ivory px-7 py-5 text-button font-semibold uppercase tracking-[0.08em] text-ink transition-colors duration-200 ease-brand hover:bg-on-dark"
+            className="group flex w-full items-center justify-center gap-3 rounded-[8px] bg-ivory px-5 py-[1.1rem] text-button font-semibold uppercase tracking-[0.08em] text-ink transition-colors duration-200 ease-brand hover:bg-on-dark"
           >
-            <UserPlus size={19} strokeWidth={1.75} aria-hidden="true" />
-            <span>Ajouter à mes contacts</span>
+            <UserPlus size={19} strokeWidth={1.75} aria-hidden="true" className="shrink-0" />
+            {/* shrink-0 : sans lui, l'algorithme flex comprime le libellé sous sa
+                largeur naturelle sur les petits écrans (≤ 360 px) et le renvoie
+                sur deux lignes, ce qui regonfle le bouton de 54 à 59 px. */}
+            <span className="shrink-0">Ajouter à mes contacts</span>
           </a>
 
           {/* ---------- Actions secondaires ----------
