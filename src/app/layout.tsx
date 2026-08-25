@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import ChromeGate from "@/components/layout/ChromeGate";
 import { site } from "@/content/site";
 import { professionalServiceJsonLd } from "@/lib/seo";
 
@@ -65,9 +66,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main" className="skip-link">
           Aller au contenu
         </a>
-        <Header />
+        {/* ChromeGate masque l'habillage sur les routes nues (carte de visite). */}
+        <ChromeGate>
+          <Header />
+        </ChromeGate>
         <main id="main">{children}</main>
-        <Footer />
+        <ChromeGate>
+          <Footer />
+        </ChromeGate>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceJsonLd()) }}
