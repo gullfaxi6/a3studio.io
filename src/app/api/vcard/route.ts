@@ -1,4 +1,5 @@
 import { carte } from "@/content/carte";
+import { cartePhotoJpegBase64 } from "@/content/carte-photo";
 
 /**
  * Génération de la vCard de Sébastien Bertucci (/api/vcard).
@@ -83,6 +84,16 @@ function buildVCard(): string {
   }
 
   lines.push(`NOTE:${escapeValue(`${carte.expertise.join(" / ")} — ${carte.zone}`)}`);
+
+  // Photo embarquée plutôt que référencée par URI : la fiche reste complète
+  // hors ligne et ne dépend pas de la disponibilité du site. Syntaxe vCard 3.0
+  // (`ENCODING=b`) — la 4.0 utiliserait une data URI, que la 3.0 ne comprend pas.
+  // La ligne est très longue : le pliage à 75 octets ci-dessous est obligatoire,
+  // plusieurs clients rejettent un bloc base64 non plié.
+  if (cartePhotoJpegBase64) {
+    lines.push(`PHOTO;ENCODING=b;TYPE=JPEG:${cartePhotoJpegBase64}`);
+  }
+
   lines.push(`REV:${carte.revision}`);
   lines.push("END:VCARD");
 

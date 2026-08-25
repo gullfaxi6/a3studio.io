@@ -20,7 +20,7 @@ export const site = {
   phone: "+33 6 98 46 69 12",
   phoneNational: "06 98 46 69 12",
   phoneHref: "tel:+33698466912",
-  linkedin: "https://www.linkedin.com/in/sébastien-bertucci-77523326",
+  linkedin: "https://www.linkedin.com/in/sebastien-bertucci-bim",
 
   // Présence géographique (arbitrage A1 : pas d'adresse frontale ni de carte en V1)
   location: {
